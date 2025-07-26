@@ -1,0 +1,46 @@
+-- INTRODUCTION TO DSA
+
+To store data (information), we need data structure, and structure varies based on requirements.
+Example - Water (i.e, data / information)
+For guest -> Glass
+For bath -> Bucket
+Here Glass and Bucket is structure.
+
+To perform an operation / approach, we require Algorithm, more specifically - set of instruction to perform a specific task.
+Example - Chai (Water, Tea, Sugar, Milk), all these are data
+Water - bowl,
+Tea, Sugar - container
+Milk - bowl
+Approach varies by person like one may add milk first and other person may add all ingredients at once.
+
+Time complexity is the method to compare different approaches for a single program.
+
+
+
+-- COLLECTIONS IN JAVA
+A framework that provides various interface
+List, Set, and Queue
+
+Interface - Provide overview of class, we can't create object of Interface
+class FILE01 implements OVERVIEW -> here OVERVIEW is an interface
+
+LIST - When we want to store items one by one, repeating allowed
+- ArrayList
+- LinkedList
+- Stack
+
+SET - Elements are placed by hashing function, repeating not allowed, order of insertion not preserved
+- HashSet
+- LinkedHashSet
+- TreeSet (Sorted)
+
+QUEUE - FIFO (First in, first out)
+- ArrayQueue
+- LinkedList
+- PriorityQueue (max. heap and min. head) - data is stored based on priority
+
+MAP (Key - Value pair), key is unique but value can repeat
+- HashMap
+- TreeMap (Sorted)
+
+* In List, Set, Queue - data are stored in value, various in Maps data are stored in Key - Value pair
