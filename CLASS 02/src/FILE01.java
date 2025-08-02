@@ -94,7 +94,7 @@ public class FILE01 {
         }
 
 
-        
+
         // --STACK
         Stack<String> bookStack = new Stack<>();
 
@@ -146,5 +146,52 @@ public class FILE01 {
         String removedFromBack = deque.pollLast();
         System.out.println("Polled from back: " + removedFromBack); // C
         System.out.println("Deque after pollLast: " + deque); // [B]
+
+
+
+        // -- PRIORITY QUEUE (MIN-HEAP)
+        Scanner scanner = new Scanner(System.in);
+        String str1 = scanner.next();
+        String str2 = scanner.next();
+
+        HashSet<Character> h = new HashSet<>();
+
+        int size1 = 0;
+        int size2 = 0;
+
+        for(int i = 0; i < str1.length(); i++) {
+            h.add(str1.charAt(i));
+        }
+
+        size1 = h.size();
+
+        for(int i = 0; i < str2.length(); i++) {
+            h.add(str2.charAt(i));
+        }
+
+        size2 = h.size();
+
+        if(size1 == size2) {
+            System.out.println("Yes");
+        }
+        else {
+            System.out.println("No");
+        }
+
+
+
+        // -- PRIORITY QUEUE (MAX HEAP)
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
+        maxHeap.offer(30);
+        maxHeap.offer(10);
+        maxHeap.offer(20);
+
+        // peek() now shows the largest element
+        System.out.println("Highest priority element (peek): " + maxHeap.peek()); // 30
+
+        // poll() now removes the largest elements first
+        System.out.println("Polling: " + maxHeap.poll()); // 30
+        System.out.println("Polling: " + maxHeap.poll()); // 20
+        System.out.println("Polling: " + maxHeap.poll()); // 10
     }
 }

@@ -1,0 +1,140 @@
+The Java Collection Framework provides a set of interfaces and classes to store and manipulate groups of objects.
+Think of it as a toolkit of ready-to-use data structures.
+
+
+
+-- LIST
+A List is an ordered collection of elements that allows duplicate values. Since it's ordered, you
+can access elements by their specific index (position).
+
+ArrayList: Great for fast random access (getting an item at index 5). It's like an array that
+can resize itself. Use this most of the time.
+
+LinkedList: Great for fast insertions and deletions, especially in the middle of the list. Accessing
+a specific index is slower because it has to traverse the list from the beginning or end.
+
+- METHODS
+
+Adding & Updating --
+add(E element)- Appends the specified element to the end of the list.
+add(int index, E element) - Inserts the element at the specified position (index).
+set(int index, E element) - Replaces the element at the specified position.
+
+Accessing --
+get(int index) - Returns the element at the specified position.
+indexOf(Object o) - Returns the index of the first occurrence of the element.
+
+Removing --
+remove(int index) - Removes the element at the specified position.
+remove(Object o) - Removes the first occurrence of the specified element.
+clear() - Removes all of the elements from the list.
+
+Utility --
+size() - Returns the number of elements in the list.
+isEmpty() - Returns true if the list contains no elements.
+contains(Object o) - Returns true if the list contains the specified element.
+
+
+
+-- SET
+A Set is a collection that contains no duplicate elements. It models the mathematical
+concept of a set. Most sets are unordered.
+
+HashSet: Stores elements in a hash table. It's the fastest but offers no ordering guarantee.
+
+LinkedHashSet: Like a HashSet but also maintains the insertion order of elements.
+
+TreeSet: Stores elements in a sorted tree structure. It keeps the elements in their natural
+sorted order (e.g., alphabetical or numerical).
+
+- METHOD
+
+Adding --
+add(E element) - Adds the element if it's not already present. Returns false if the element already exists.
+
+Removing --
+remove(Object o) - Removes the specified element if it is present.
+clear() - Removes all of the elements from the set.
+
+Utility	 --
+size() - Returns the number of elements in the set.
+isEmpty() - Returns true if the set contains no elements.
+contains(Object o) - Returns true if the set contains the specified element.
+
+
+
+-- QUEUE
+A Queue is a collection used to hold elements before processing. It typically orders elements
+in a FIFO (First-In, First-Out) manner.
+
+LinkedList: Can be used as a Queue because it's efficient at adding/removing from its ends.
+
+PriorityQueue: A special queue that orders elements based on their natural order or a custom comparator,
+not just FIFO.
+
+Throws Exception	Returns Special Value	Description
+add(E e)	        offer(E e)	            Inserts an element into the queue. offer is generally preferred.
+remove()	        poll()	                Retrieves and removes the head of the queue.
+element()	        peek()	                Retrieves, but does not remove, the head of the queue.
+
+
+
+-- MAP
+A Map is an object that maps unique keys to values. It's perfect for storing key-value pairs. Note
+that Map is part of the framework but doesn't extend the Collection interface.
+
+HashMap: Provides the fastest look ups. It makes no guarantee about the order of the keys.
+
+LinkedHashMap: Maintains the insertion order of the keys.
+
+TreeMap: Keeps the keys in their natural sorted order.
+
+- METHODS
+
+Adding & Updating --
+put(K key, V value) - Associates the specified value with the specified key.
+If the key already exists, the old value is replaced.
+putIfAbsent(K key, V value) - Puts the key-value pair only if the key is not already present.
+
+Accessing --
+get(Object key) - Returns the value to which the specified key is mapped, or null if the map contains no mapping for the key.
+getOrDefault(Object key, V defaultValue) - Returns the value for the key, or defaultValue if the key isn't found.
+
+Removing --
+remove(Object key) - Removes the mapping for a key from this map if it is present.
+clear() - Removes all of the mappings from the map.
+
+Utility --
+size() - Returns the number of key-value mappings.
+isEmpty() - Returns true if the map contains no mappings.
+containsKey(Object key) - Returns true if the map contains a mapping for the specified key.
+containsValue(Object value) - Returns true if this map maps one or more keys to the specified value.
+keySet() - Returns a Set view of all the keys contained in the map.
+values() - Returns a Collection view of all the values contained in the map.
+
+
+
+-- STACK
+A Stack is a LIFO (Last-In, First-Out) data structure. Think of it like a stack of
+plates: the last plate you add to the top is the first one you take off.
+
+- METHODS
+push(E item) - Adds an item to the top of the stack.
+pop() - Removes and returns the item at the top of the stack. Throws EmptyStackException if the stack is empty.
+peek() - Looks at the item at the top of the stack without removing it. Throws EmptyStackException if empty.
+empty() - Returns true if the stack has no elements, false otherwise.
+search(Object o) - Returns the 1-based position of an item from the top of the stack. Returns -1 if the item is not found.
+
+
+
+-- DEQUE
+A Deque (pronounced "deck") stands for Double Ended Queue. It's a versatile collection that combines the features
+of both a stack and a queue, allowing you to add, remove, and look at elements from both the front and the back.
+
+Because of this flexibility, Deque is the recommended interface to use for both stack (LIFO) and queue (FIFO)
+operations in modern Java. The most common implementation is ArrayDeque.
+
+Operation	From the Front (Head)	From the Back (Tail)
+Add	        offerFirst(E e)	        offerLast(E e)
+Remove	    pollFirst()	            pollLast()
+Examine	    peekFirst()	            peekLast()

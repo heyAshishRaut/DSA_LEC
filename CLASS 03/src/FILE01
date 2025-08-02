@@ -1,0 +1,6 @@
+Adding elements in SET -
+hashCode() - convert object to hashcode
+if hashcode's are same for two objects then equals()
+
+* if two objects are same there hashcode will be same
+* if two hashcode are same, but object may or may not be same, to check - equals() is used.
