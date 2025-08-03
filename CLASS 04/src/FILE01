@@ -1,0 +1,127 @@
+Rate of growth -
+
+Types of equation in mathematics -
+1. Logarithmic - logx
+2. Linear - 1
+3. Quadratic - 2
+4. Cubic - 3
+5. Bi Quadratic - 4
+6. Exponential - e^x, 2^n, 3^n
+
+f(x) = ax + b
+a, b are constant and they can be neglect for x is very large
+then f(x) = ax + b => x
+
+f(x) = ax^2 + bx + c
+dominating term is x^2 and other can be ignored, for x to be very large
+
+convert program to mathematical equation, and then to find time complexity we will find most
+dominating term
+
+Program
+|
+Mathematical equation
+|
+Most dominating term
+|
+Time complexity
+
+for 2 + 2 = 4 --> constant time (fastest work in programming) and denoted by 1
+
+** 1 < logx < x < xlogx < x^2 < x^3 < x^4 < e^x
+for large value of x
+
+for x = 10
+x < log10 < 10 < 10log10 < 100 < 1000 < 10000 < e^10
+
+Estimate time -
+1. Best case - Omega(n)
+2. Average case - Theta(n)
+3. Worst case - O(n)
+
+ex -
+            JAVA
+2 month     3 month     6 month
+minimum     average     maximum - TIME
+
+
+-- CONSTANT TIME -
+void main() {
+    int x, y, z;
+    z = x + y;
+    print(z);
+}
+independent of input size -> constant time -> O(1)
+
+
+-- LINEAR TIME -
+void main() {
+    int a, b, c, n;
+    for(int i = 0; i < n; i++) {
+        a++;
+    }
+    print(a);
+}
+loop runs n times and most dominating term is n, here's time complexity is O(n)
+
+void man() {
+    int a, b, c;
+    a = b + c;
+    for(int i = 0; i < n/2; i++) {
+        a++;
+    }
+    for(int j = 0; j < n; j++) {
+        b++;
+    }
+    print(a, b);
+}
+1st loop runs n/2 times so its time complexity is O(n/2)
+2st loop runs n times so its time complexity is O(n)
+But here most dominating term is n, so overall time complexity is O(n)
+
+
+-- QUADRATIC TIME -
+void main() {
+    int a, b, c;
+    a = b + c;
+    print(a);
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            a++;
+        }
+    }
+}
+Outer loop - n times
+Inner loop - m times for single value of outer loop
+total times run - n * m
+m ~ n
+So time complexity is O(n^2)
+
+
+-- LOGARITHM TIME -
+1     2     4     8     16    32    64
+2^0   2^1   2^2   2^3   2^4   2^5   2^6
+
+for(int i = 1; i <= n; i = i * 2) {
+
+}
+
+2^k = n
+taking log both side
+k log2 = logn
+k = logn / log2
+i.e, k = logn
+So time complexity is O(logn)
+
+
+for(int i = 0; i < n; i++) {
+    for(int j = 1; j < n; j = j * 2) {
+        // code
+    }
+}
+
+Outer loop - O(n)
+Inner loop - O(logn)
+
+So total time complexity is O(n logn)
