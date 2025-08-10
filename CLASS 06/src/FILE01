@@ -1,0 +1,39 @@
+TIME COMPLEXITY AND RECURSION
+
+A function calling itself is called recursion.
+Important - Base condition is necessary in recursion, otherwise function will go into infinite loop.
+
+Fibonacci Number
+The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence,
+such that each number is the sum of the two preceding ones, starting from 0 and 1.
+Leetcode que no 509
+
+class Solution {
+    public int fib(int n) {
+        if(n == 0 || n == 1) {
+            return n;
+        }
+        else {
+            return fib(n - 1) + fib(n - 2);
+        }
+    }
+}
+
+is power of two (231)
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if(n == 1) {
+            return true; // 2^0 == 1
+        }
+        if(n % 2 != 0 || n <= 0) {
+            return false;
+        }
+        while(n > 1) {
+            if(n % 2 != 0) {
+                return false;
+            }
+            n = n / 2;
+        }
+        return true;
+    }
+}
